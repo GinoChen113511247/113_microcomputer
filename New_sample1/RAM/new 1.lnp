@@ -1,0 +1,13 @@
+--cpu=Cortex-M4.fp.sp
+".\ram\hardwaresystem_ini.o"
+".\ram\main.o"
+".\ram\includebinary.o"
+".\ram\samp1_gpio.o"
+".\ram\stm32f4xx_fsmc.o"
+".\ram\stm324xg_lcd_ili9328.o"
+".\ram\startup_stm32f407xx.o"
+".\ram\system_stm32f4xx.o"
+--strict --scatter ".\RAM\new 1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\new 1.map" -o ".\RAM\new 1.axf"

@@ -1,0 +1,14 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\hardwaresystem_ini.o"
+".\objects\main.o"
+".\objects\includebinary.o"
+".\objects\gpio_ini.o"
+".\objects\samp1_gpio.o"
+".\objects\stm32f4xx_fsmc.o"
+".\objects\stm324xg_lcd_ili9328.o"
+".\objects\startup_stm32f407xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\new 1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\new 1.map" -o ".\Objects\new 1.axf"
