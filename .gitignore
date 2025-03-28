@@ -1,0 +1,21 @@
+# μVision / Keil IDE 設定檔
+*.uvoptx
+*.uvguix.*
+*.bak
+*.plg
+*.dep
+
+# 編譯產物（不需要加入 Git 追蹤）
+*.o
+*.d
+*.lst
+*.map
+*.axf
+*.hex
+*.elf
+*.bin
+
+# 系統垃圾檔（Windows / macOS）
+.DS_Store
+Thumbs.db
+desktop.ini
