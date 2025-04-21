@@ -1,0 +1,170 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: £gVision V5.30.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Jonathan Yang, NYCU, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.30.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.30.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.42.0.0
+ 
+<h2>Project:</h2>
+C:\NYCU EE\MCU2025\Practice\New_sample\New GLCD.uvprojx
+Project File Date:  04/11/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f407xx.s...
+assembling includeBinary.s...
+compiling HardwareSystem_Ini.C...
+compiling tjpgd_user.c...
+compiling stm32f4xx_fsmc.c...
+compiling gif.c...
+source/main.c(41): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        LCD_DrawBitmap(0, 0, stlogo);  // start at xPixel=0 (rightward), yPixel=0 (downward)
+                             ^~~~~~
+./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
+        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
+                                                                   ^
+source/main.c(42): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        LCD_DrawBitmap(0, 190, stlogo);  // start at xPixel=0 (rightward), yPixel=190 (downward)
+                               ^~~~~~
+./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
+        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
+                                                                   ^
+source/main.c(43): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        LCD_DrawBitmap(250, 0,  stlogo);  
+                                ^~~~~~
+./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
+        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
+                                                                   ^
+source/main.c(44): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        LCD_DrawBitmap(230, 60,  stlogo);  
+                                 ^~~~~~
+./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
+        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
+                                                                   ^
+4 warnings generated.
+compiling main.c...
+compiling gif_user.c...
+compiling system_stm32f4xx.c...
+compiling stm324xg_lcd_ILI9328_wizard.c...
+compiling tjpgd.c...
+compiling stm324xg_lcd_ILI9328.c...
+linking...
+.\Objects\new_GLCD.axf: Warning: L6439W: Multiply defined Global Symbol delay_ms defined in .text.delay_ms(stm324xg_lcd_ili9328_wizard.o) rejected in favor of Symbol defined in .text.delay_ms(stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_RGB_Test multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawSimpleCross multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol Font12_Table multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DisplayStringAt multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_Clear multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DisplayStringLineCol multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawBitmap multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_RestoreFont multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawRGBImage multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawRect multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_Init multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_Pixel_Height multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_Pixel_Width multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_ReadRGBImage multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_SaveFont multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_SetColors multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_SetFont multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_SetTextColor multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawHLine multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol ILI9328 multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawMonoPict multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_RestoreColors multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol Font12 multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_FillCircle multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol Font20 multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol Font20_Table multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol GPIO_backlight multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol GPIO_reset multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol GRAM_mode multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_ClearStringLine multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_ClosedPolyLineRelative multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DisplayDevID multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DisplayOff multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_SaveColors multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DisplayOn multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DisplayOnTest multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawCircle multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawEllipse multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawLine multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawPixel multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawPolygon multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_DrawVLine multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_FSMCConfig multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_FillEllipse multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_FillPolygon multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_FillRect multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_Reset multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_FillTriangle multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_GetColors multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_GetFont multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_OpenWin multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_PolyLine multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_PolyLineRelative multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_SetBackColor multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_WriteRegX multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_toDefaultDisDirection multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_toLandscape multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol LCD_toPortrait multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol MenuInit multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol lFont multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol lbColor multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol lcd_id multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+.\Objects\new_GLCD.axf: Error: L6200E: Symbol ltColor multiply defined (by stm324xg_lcd_ili9328_wizard.o and stm324xg_lcd_ili9328.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 1 warning and 63 error messages.
+".\Objects\new_GLCD.axf" - 63 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM.CMSIS.6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.1.pack
+                Keil.STM32F4xx_DFP.2.17.1
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Keil_v5\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include
+  C:\Keil_v5\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:6.1.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
