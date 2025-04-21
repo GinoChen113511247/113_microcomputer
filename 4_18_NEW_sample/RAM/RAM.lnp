@@ -1,0 +1,17 @@
+--cpu=Cortex-M4.fp.sp
+".\ram\main.o"
+".\ram\hardwaresystem_ini.o"
+".\ram\includebinary.o"
+".\ram\stm32f4xx_fsmc.o"
+".\ram\tjpgd.o"
+".\ram\tjpgd_user.o"
+".\ram\gif.o"
+".\ram\gif_user.o"
+".\ram\stm324xg_lcd_ili9328.o"
+".\ram\callback_example.o"
+".\ram\startup_stm32f405xx_1.o"
+".\ram\system_stm32f4xx.o"
+--strict --scatter ".\RAM\RAM.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\RAM\RAM.map" -o .\RAM\RAM.axf
