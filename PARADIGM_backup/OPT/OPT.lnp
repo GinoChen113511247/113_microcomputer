@@ -1,0 +1,14 @@
+--cpu=Cortex-M4.fp.sp
+".\opt\hardwaresystem_ini.o"
+".\opt\user_defined.o"
+".\opt\serial_retarget_printf.o"
+".\opt\stm32f40xxx_41xxx_opt.o"
+".\opt\main_flash.o"
+".\opt\includebinary.o"
+".\opt\gpio_ini.o"
+".\opt\startup_stm32f407xx.o"
+".\opt\system_stm32f4xx.o"
+--strict --scatter ".\OPT\OPT.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\LIST\OPT.map" -o .\OPT\OPT.axf

@@ -1,0 +1,12 @@
+--cpu=Cortex-M4.fp.sp
+".\obj\hardwaresystem_ini.o"
+".\obj\user_defined.o"
+".\obj\main_flash.o"
+".\obj\includebinary.o"
+".\obj\gpio_ini.o"
+".\obj\startup_stm32f407xx.o"
+".\obj\system_stm32f4xx.o"
+--strict --scatter ".\OBJ\Flash.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\LIST\Flash.map" -o .\OBJ\Flash.axf

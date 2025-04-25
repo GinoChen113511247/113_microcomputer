@@ -1,0 +1,13 @@
+--cpu=Cortex-M4.fp.sp
+".\ram\hardwaresystem_ini.o"
+".\ram\user_defined.o"
+".\ram\purge_flashreadprotection_level_1.o"
+".\ram\main_flash.o"
+".\ram\includebinary.o"
+".\ram\gpio_ini.o"
+".\ram\startup_stm32f407xx.o"
+".\ram\system_stm32f4xx.o"
+--strict --scatter ".\RAM\RAM.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\RAM\RAM.map" -o .\RAM\RAM.axf

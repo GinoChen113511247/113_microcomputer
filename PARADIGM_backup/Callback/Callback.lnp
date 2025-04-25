@@ -1,0 +1,12 @@
+--cpu=Cortex-M4.fp.sp
+".\callback\hardwaresystem_ini.o"
+".\callback\user_defined.o"
+".\callback\includebinary.o"
+".\callback\gpio_ini_raw.o"
+".\callback\main_callback.o"
+".\callback\startup_stm32f407xx.o"
+".\callback\system_stm32f4xx.o"
+--strict --scatter ".\Callback\Callback.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Callback\Callback.map" -o .\Callback\Callback.axf
