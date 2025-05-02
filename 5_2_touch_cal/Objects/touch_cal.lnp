@@ -1,0 +1,15 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\hardwaresystem_ini.o"
+".\objects\user_defined.o"
+".\objects\stm32f4xx_fsmc.o"
+".\objects\stm324xg_lcd_ili9328.o"
+".\objects\main_cal.o"
+".\objects\touch_demo.o"
+".\objects\driver_spi.o"
+".\objects\touch_module.o"
+".\objects\startup_stm32f407xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\touch_cal.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\touch_cal.map" -o .\Objects\touch_cal.axf

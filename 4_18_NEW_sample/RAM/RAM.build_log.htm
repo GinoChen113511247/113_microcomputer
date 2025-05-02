@@ -21,54 +21,16 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.42.0.0
  
 <h2>Project:</h2>
-C:\MCU2025\M4_projects\NEW_sample\New GLCD.uvprojx
+C:\MCU2025\practice\4_18_NEW_sample\New GLCD.uvprojx
 Project File Date:  04/18/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'callback'
-Note: source file 'RTE\Device\STM32F405ZGTx\startup_stm32f405xx.s' - object file renamed from '.\RAM\startup_stm32f405xx.o' to '.\RAM\startup_stm32f405xx_1.o'.
-Note: source file 'RTE\Device\STM32F405ZGTx\startup_stm32f405xx.s' - object file renamed from '.\RAM\startup_stm32f405xx.o' to '.\RAM\startup_stm32f405xx_1.o'.
-compiling HardwareSystem_Ini.C...
-assembling includeBinary.s...
-compiling stm32f4xx_fsmc.c...
-assembling startup_stm32f405xx.s...
-compiling gif.c...
-compiling callback_EXAMPLE.c...
-compiling gif_user.c...
-compiling system_stm32f4xx.c...
-compiling tjpgd_user.c...
-source/main.c(41): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        LCD_DrawBitmap(0, 0, stlogo);  // start at xPixel=0 (rightward), yPixel=0 (downward)
-                             ^~~~~~
-./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
-        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
-                                                                   ^
-source/main.c(42): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        LCD_DrawBitmap(0, 190, stlogo);  // start at xPixel=0 (rightward), yPixel=190 (downward)
-                               ^~~~~~
-./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
-        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
-                                                                   ^
-source/main.c(43): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        LCD_DrawBitmap(250, 0,  stlogo);  
-                                ^~~~~~
-./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
-        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
-                                                                   ^
-source/main.c(44): warning: passing 'const unsigned char [9174]' to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
-        LCD_DrawBitmap(230, 60,  stlogo);  
-                                 ^~~~~~
-./GLCD\stm324xg_lcd_sklin.h(287): note: passing argument to parameter 'BmpAddress' here
-        void LCD_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *BmpAddress);
-                                                                   ^
-4 warnings generated.
-compiling main.c...
+Build target 'callback'
+ArmClang: error: no such file or directory: 'C:/Users/User/Downloads/New_sample/New_sample/GLCD/stm324xg_lcd_ILI9328.c'
+ArmClang: error: no input files
 compiling stm324xg_lcd_ILI9328.c...
-compiling tjpgd.c...
-linking...
-Program Size: Code=11160 RO-data=17784 RW-data=24 ZI-data=21728  
-".\RAM\RAM.axf" - 0 Error(s), 4 Warning(s).
+".\RAM\RAM.axf" - 2 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -94,11 +56,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:6.1.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f405xx.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Target not created.
 Build Time Elapsed:  00:00:00
 </pre>
 </body>
