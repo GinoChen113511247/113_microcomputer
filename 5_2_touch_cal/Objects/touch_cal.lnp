@@ -5,6 +5,8 @@
 ".\objects\stm324xg_lcd_ili9328.o"
 ".\objects\main_cal.o"
 ".\objects\touch_demo.o"
+".\objects\touch_playfig.o"
+".\objects\ts_calibration.o"
 ".\objects\driver_spi.o"
 ".\objects\touch_module.o"
 ".\objects\startup_stm32f407xx.o"

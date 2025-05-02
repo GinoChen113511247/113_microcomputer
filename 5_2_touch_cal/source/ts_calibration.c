@@ -99,8 +99,8 @@ restart:
 	   [a0[1]		a1[1]		a2[1]   a3[1]]  [b[2]]
 																			[b[3]]  
 */	//-------------------------------------------
-		Normal_eq_?
-		Gaussian_for_?
+		Normal_eq_for_4x3_Matrix(aTch, bLCDx, newA, new_b, 1);
+		Gaussian_for_3x3(newA, new_b, xx);
 		X1 = (int32_t) (xx[0]*Q_format);	// X1 = xx[0]
 		Xx = (int32_t) (xx[1]*Q_format);  // Xx = X2 = xx[1]
 		Xy = (int32_t) (xx[2]*Q_format);  // Xy = X3 = xx[2]
@@ -133,8 +133,8 @@ restart:
 	   [1		a2[0]		a2[1]] [xx[2]	] 	[b[2]]
 	   [1		a3[0]		a3[1]]          	[b[3]]
 */	//-------------------------------------------
-		Normal_eq_?
-		Gaussian_for_?
+		Normal_eq_for_4x3_Matrix(aTch, bLCDx, newA, new_b, 0);
+		Gaussian_for_3x3(newA, new_b, xx);
 		Y1 = (int32_t) (xx[0]*Q_format);	// Y1 = xx[0]
 		Yx = (int32_t) (xx[1]*Q_format);  // Yx = Y3 = xx[1]
 		Yy = (int32_t) (xx[2]*Q_format);  // Yy = Y2 = xx[2]

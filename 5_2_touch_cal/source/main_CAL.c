@@ -60,7 +60,7 @@ startup:
 	
 //>>>>===== Scinario 2 =======================		
   LCD_Clear(LCD_COLOR_WHITE);
-	//Touchscreen_playFig();		// see touch_playFig_comp.c
+	Touchscreen_playFig();		// see touch_playFig_comp.c
 
 //>>>>===== Scinario 3 =======================		
   LCD_Clear(LCD_COLOR_WHITE);

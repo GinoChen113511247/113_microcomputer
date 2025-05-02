@@ -63,7 +63,7 @@ re_start:
   LCD_SetTextColor(LCD_COLOR_RED);
 	LCD_FillRect(X_Cood, Y_Cood, bar_Width, bar_Height);
 	LCD_SetTextColor(LCD_COLOR_BROWN); 
-  LCD_DrawRect(X_Cood-1, ?, bar_Width+?, bar_Height+?);			// boundary
+  LCD_DrawRect(X_Cood-1, Y_Cood-1, bar_Width+2, bar_Height+2);			// boundary
 #define original_x_end	(X_Cood+bar_Width-1)
 	bar_x = original_x_end;
 	
@@ -83,13 +83,13 @@ re_start:
 		if(TS_press)
 		{
 		//###==== Request Calibration		
-      if((y > 0)&& (y < (Font20.?) ))
+      if((y > 0)&& (y < (Font20.Height) ))
       {
-        if( (x > (?.?*1)) &&	
-           (x < (?.?*4) ) )
+        if( (x > (Font20.Width*1)) &&	
+           (x < (Font20.Width*4) ) )
         {
 					LCD_SetColors(LCD_COLOR_BLUE2, LCD_COLOR_LIGHTGRAY); // Text,  back 
-					LCD_DisplayStringLineCol(?, ?,"CAL"); // line 0, column 1
+					LCD_DisplayStringLineCol(0, 1,"CAL"); // line 0, column 1 (not sure)
 			//>>>-------------			
 					WaitForTouchRelease(5);
 			//<<<-----------------			
@@ -101,7 +101,7 @@ re_start:
 		//###<<<===========================
 
 		//###==== Running Bar		
-      if((y >= ?)&& (y < ? ))
+      if((y >= Y_Cood)&& (y < Y_Cood+bar_Height ))
       {
         
         if( (x > (bar_x-3)) && (x < (bar_x+3) ) )
@@ -109,7 +109,7 @@ re_start:
 					int dif;
 					
 					LCD_SetTextColor(LCD_COLOR_MAGENTA);
-					LCD_FillRect(?, ?, bar_x-?, ?);
+					LCD_FillRect(X_Cood, Y_Cood, bar_x-1-X_Cood, bar_Height);
 
 					while( (x > (bar_x-3)) &&	(x < (bar_x+3) ) )
 					{
@@ -136,12 +136,12 @@ re_start:
 					}
 						dif = x- bar_x;
 						if (dif > 0){	// If x > bar_x, THEN extend the bar width
-							LCD_SetTextColor(?);
-							LCD_FillRect(bar_x+?, ?, dif, ?);	
+							LCD_SetTextColor(MAGENTA);
+							LCD_FillRect(bar_x, Y_Cood, dif, bar_Height);	
 						}else {
 							if (dif < 0){	// If x < bar_x, THEN shrink the bar width
-								LCD_SetTextColor(?);
-								LCD_FillRect(bar_x+?, ?, -dif, ?);
+								LCD_SetTextColor(WHITE);
+								LCD_FillRect(bar_x+dif+1, Y_Cood, -dif, bar_Height);
 							}
 						}
 						bar_x = x;	// update bar_x
@@ -161,26 +161,26 @@ re_start:
            (y < (PlayFig_YPOS + PlayFig_RADIUS)) )
       {
         
-        if( (x > ?) &&	
-           ? )
+        if( (x > (PlayFig_XPOS - PlayFig_RADIUS)) &&	
+           (x < (PlayFig_XPOS + PlayFig_RADIUS)) )
         {
           if((state & 1) == 0)		// state=0: PAUSE fig. ==> PLAY fig.
           {
-						?	// change gray level
+						LCD_Play_Pause(0, 1);	// change gray level, (draw)
 			//>>>-------------			
-					  ?	// wait for release
+					  WaitForTouchRelease(5);	// wait for release
 			//<<<-----------------			
-						?	// change figure
-            state = ?;						// update state
+						LCD_Play_Pause(1, 0);	// change figure
+            state = 1;						// update state
 						}else										// state=1: PLAY fig. ==> PAUSE fig.
 					{
-						?	// change gray level
+						LCD_Play_Pause(1, 1);	// change gray level
 			//>>>-------------			
-					  ?	// wait for release
+					  WaitForTouchRelease(5);	// wait for release
 			//<<<-----------------			
 
-						?	// change figure
-            state = ?;						// update state
+						LCD_Play_Pause(0, 0);	// change figure
+            state = 0;						// update state
 					}
         }
       }   //END of  if((y > (PlayFig_YPOS - PlayFig_RADIUS))&&
