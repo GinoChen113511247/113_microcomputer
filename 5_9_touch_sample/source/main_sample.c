@@ -62,14 +62,14 @@ startup:
 	
 //>>>>===== Scinario 1 =======================		
 	LCD_Clear(WHITE);	      
-	//Touch_sample_FreeDraw();
+	Touch_sample_FreeDraw();
 	
 //>>>>===== Scinario 2 =======================		
   Touch_sample_Sine();
 	
 //>>>>===== Scinario 3 =======================
 	LCD_Clear(GREEN);
-	//Touch_sample_Hit();
+	Touch_sample_Hit();
 	
 //>>>>===== Scinario X =======================		
   LCD_Clear(GREEN);

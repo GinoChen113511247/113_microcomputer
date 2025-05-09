@@ -71,33 +71,31 @@ re_start:
 		//###==== 	
 		 for (i=0; i<point_Count; i++)
 		 {
-			if( state[i] == ? ) // if cross point i was not yet hit
+			if( state[i] == 0 ) // if cross point i was not yet hit
 			{						// judge if touching point in the square of 7x7 pixels, i.e., -+3
-
-
-
-
-
-				
+          if ((y>=Points[i].Y-3)&&(y<=Points[i].Y+3)) //y range
+					{
+						if ((x>=Points[i].X-3)&&(x<=Points[i].X+3)) //x range
+						{
 //================
 					LCD_SetColors(LCD_COLOR_RED, BackColor); // Text = red; 
 						sprintf(text, "Hit Point: x=%04d y=%04d", x, y);
 					LCD_DisplayStringAt((Font20.Width)*1.7, (Font20.Height)*10.5, text, LEFT_MODE);
 //================	
 
-						state[i] = ?;		// state of cross point i has been hit
-						C_finish ??;		// decrement
-						x = ?;					// used in function "Draw_cross"
-						y = ?;					// used in function "Draw_cross"
-						Draw_cross(??????);		// call "Draw_cross": delete by drawing with BackColor
+						state[i] = 1;		// state of cross point i has been hit
+						C_finish --;		// decrement
+						x = Points[i].X;					// used in function "Draw_cross"
+						y = Points[i].Y;					// used in function "Draw_cross"
+						Draw_cross(x, y, BackColor, BackColor);		// call "Draw_cross": delete by drawing with BackColor
 						break;
-//					}	// END of if (range of x)
-//				}	  // END of if (range of y)
+					}	// END of if (range of x)
+				}	  // END of if (range of y)
 			}		// END of "if( state[i] == 0 )"
 		 }		// END of "for (i=0; i<point_Count; i++)"
 //<<<<--------------------------
 		 
-			if (C_finish == ?){
+			if (C_finish == 0){
 				LCD_Clear(BackColor);
 				LCD_SetFont(&Font20);
 				LCD_SetColors(LCD_COLOR_RED, LCD_COLOR_BLUE);
@@ -105,7 +103,7 @@ re_start:
 				y = BSP_LCD_GetYSize();
 
 				if (RNG_setup == 1){
-					prIndex = RNG_Get_RandomRange(??, ??-1);
+					prIndex = RNG_Get_RandomRange(0, Num_praises-1);
 					LCD_DisplayStringAt(x/2-60, y-60, praises[prIndex], LEFT_MODE);
 
 						LCD_SetFont(&Font16);

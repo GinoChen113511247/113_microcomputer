@@ -5,6 +5,8 @@
 ".\objects\stm324xg_lcd_ili9328.o"
 ".\objects\alarm_sample.o"
 ".\objects\main_sample.o"
+".\objects\touch_sample_freedraw.o"
+".\objects\touch_sample_hit.o"
 ".\objects\touch_sample_sine.o"
 ".\objects\driver_spi.o"
 ".\objects\touch_functions.o"

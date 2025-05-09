@@ -1,6 +1,7 @@
 #include "touch_module.h"
 #include <stdio.h>	// for sprintf
 
+
 #define ABS(X)  ((X) > 0 ? (X) : -(X))
 #ifndef Bit
 #define Bit(x) 	(0x01ul<<x)
@@ -90,30 +91,43 @@ void Touch_sample_FreeDraw (void)
 //>>>----------Assignment-----
 		if(TS_State.TouchDetected)
 		{
-				if(x < ColorBoxes_x){		// in range of drawing plate
-					LCD_SetTextColor(?);	
-					LCD_?(?, ?, 2, 2);		// draw a square point at (x,y)
-				} else{  if(y ?? Color1_y){ // i.e., ColorBoxes_x <= x <= 319
-								?									// change the text color
-							LCD_FillRect(0, 0, ?, ?); // erase the drawing plate
-						}else{
-							if(y ?? Color2_y){		// in range of BLUE color
-								if(TouchColor ?? BLUE){
-									Touch_ChooseColor(?, ? );
-									? = BLUE;
-								}
-						}else{
-?												// in range of GREEN color
-?
-?
-?
-?
-?												// in range of RED color
-?
-?
-							}
-						}
-				}
+				if (x < ColorBoxes_x)               // in range of drawing plate
+        {
+           LCD_SetTextColor(TouchColor);	
+           LCD_FillRect(x, y, 2, 2);       // draw a square point at (x,y)
+        }
+        else       // i.e., ColorBoxes_x <= x <= 319                         
+        {
+            if (y < Color1_y)               
+            {
+                LCD_SetTextColor(WHITE);                    // change the text color
+                LCD_FillRect(0, 0, ColorBoxes_x, BSP_LCD_GetYSize()); // erase the drawing plate
+            }
+            else
+            if (y < Color2_y)               // in range of BLUE color
+            {
+                if (TouchColor != BLUE) 
+								 {
+                 Touch_ChooseColor(BLUE, TouchColor);
+                 TouchColor = BLUE;
+                 }
+            }
+           else
+           if (y < Color3_y)               // in range of GREEN color
+           {
+               if (TouchColor != GREEN) {
+                Touch_ChooseColor(GREEN, TouchColor);
+                 TouchColor = GREEN;
+              }
+           }
+           else                            // in range of RED color
+           {
+                if (TouchColor != RED) {
+                Touch_ChooseColor(RED, TouchColor);
+                TouchColor = RED;
+               }
+           }
+        }
 		}	//	END of if(TS_State.TouchDetected)
 //<<<-------------------------
 		
@@ -186,8 +200,8 @@ static void Draw_sample(void)
 	LCD_SetColors(MAGENTA, GRAY);
 	LCD_DisplayStringAt(ColorBoxes_x, (R_h/3 +4), (char*)"CLR", LEFT_MODE);
 		// initial pen color
-	TouchColor = RED; 
-		Touch_ChooseColor(TouchColor, WHITE);
+	uint16_t TouchColor = RED; 
+	Touch_ChooseColor(TouchColor, WHITE);
 }
 
 
