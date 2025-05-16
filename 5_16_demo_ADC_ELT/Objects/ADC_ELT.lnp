@@ -1,0 +1,21 @@
+--cpu Cortex-M4.fp
+".\objects\hardwaresystem_ini.o"
+".\objects\user_defined.o"
+".\objects\gpio_ini1.o"
+".\objects\gpio_ini2.o"
+".\objects\gpio_ini.o"
+".\objects\stm324xg_eval_lcdx.o"
+".\objects\stm32f4xx_fsmc.o"
+".\objects\lcd_log.o"
+".\objects\stm32f4_adc_wizard.o"
+".\objects\main.o"
+".\objects\stm32f4xx_dma.o"
+".\objects\stm32f4xx_rcc.o"
+".\objects\stm32f10x_it.o"
+".\objects\stm32f4_nvic.o"
+".\objects\startup_stm32f407xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\ADC_ELT.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\ADC_ELT.map" -o .\Objects\ADC_ELT.axf

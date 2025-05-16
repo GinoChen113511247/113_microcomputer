@@ -1,0 +1,18 @@
+--cpu=Cortex-M4.fp.sp
+".\ram\hardwaresystem_ini.o"
+".\ram\user_defined.o"
+".\ram\gpio_ini.o"
+".\ram\stm32f4xx_fsmc.o"
+".\ram\stm324xg_lcd_ili9328.o"
+".\ram\stm32f4_adc_wizard.o"
+".\ram\main.o"
+".\ram\stm32f4xx_dma.o"
+".\ram\stm32f4xx_rcc.o"
+".\ram\stm32f10x_it.o"
+".\ram\stm32f4_nvic.o"
+".\ram\startup_stm32f407xx.o"
+".\ram\system_stm32f4xx.o"
+--strict --scatter ".\RAM\ADC_ELT.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\ADC_ELT.map" -o .\RAM\ADC_ELT.axf
