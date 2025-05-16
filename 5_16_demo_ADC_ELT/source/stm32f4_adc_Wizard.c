@@ -49,7 +49,7 @@
 //       <o0.8..11> CCr.DELAY: "interleaved" delay between two sampling phases <5-20> <#-5>
 //             <i> 5~20: 5*T_ADCCLK ~ 20*T_ADCCLK
 //	</h>
-#define ADC_CCR_VAL       0x00C10000									// 0
+#define ADC_CCR_VAL       0x00C12000									// 0
 
 //=========================================================================== Clock Configuration
 // <e0.0> ADC1 Register Configuration 
@@ -214,8 +214,8 @@
 #define ADC1_SQR2_VAL       0x00000000									// 2
 #define ADC1_SQR1_VAL       0x00200000					// 3
 #define ADC1_JSQR_VAL       0x0011C000 					// 4
-#define ADC1_CR1_VALtmp     0x00000180	  				// 5	 
-#define ADC1_CR2_VAL        0x1F0F0700				 	// 6
+#define ADC1_CR1_VALtmp     0x00002D80	  				// 5	 
+#define ADC1_CR2_VAL        0x2F1F0700				 	// 6
 #define ADC1_HTR_VAL        2816				 		// 7
 #define ADC1_LTR_VAL        768				 			// 8
 //------------------------

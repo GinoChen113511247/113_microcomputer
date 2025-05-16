@@ -357,7 +357,7 @@
 #define __SYSCFG_EXTICR1          0x00000000              //  7
 #define __SYSCFG_EXTICR2          0x00000000              //  8
 #define __SYSCFG_EXTICR3          0x00005000              //  9
-#define __SYSCFG_EXTICR4          0x00002000              // 10
+#define __SYSCFG_EXTICR4          0x00005000              // 10
 
 #if __EXTI_SETUP
 /*----------------------------------------------------------------------------
@@ -1183,6 +1183,49 @@ __inline static void stm32_ExtiSetup (void) {
 //                 <14=> AF14 
 //                 <15=> AF15(EVENTOUT) 
 //           ^^^^----------------------
+//       <o1.20..24> **Pin 4 =========>
+//          <i> bits [0:1] as MODE; 
+//          <i> bits [2:3] as Pull Up/Down; 
+//          <i> bits [4] as Push Pull/ Open Drain; 
+//                 <0x03=> [4] Analog or NOT used
+//                 <0x00=> [4] In: Floating (reset mode)
+//                 <0x04=> [4] In: Pull Up
+//                 <0x08=> [4] In: Pull Down
+//                 <0x01=> [4] Out PP: no Pull
+//                 <0x05=> [4] Out PP: Pull Up
+//                 <0x09=> [4] Out PP: Pull Down
+//                 <0x11=> [4] Out OD: no Pull
+//                 <0x15=> [4] Out OD: Pull Up
+//                 <0x19=> [4] Out OD: Pull Down
+//                 <0x02=> [4] AF PP: no Pull
+//                 <0x06=> [4] AF PP: Pull Up
+//                 <0x0A=> [4] AF PP: Pull Down
+//                 <0x12=> [4] AF OD: no Pull
+//                 <0x16=> [4] AF OD: Pull Up
+//                 <0x1A=> [4] AF OD: Pull Down
+//       <o4.8..9> ^---- Speed for Out/AF:
+//                 <0=> low (2MHz)
+//                 <1=> medium (25MHz)
+//                 <2=> fast (50MHz)
+//                 <3=> high (100MHz)
+//       <o5.16..19> ^---- Alternate Function:
+//          <i> "AF0" for the mode other than Alternate Function
+//                 <0=> AF0 (system) 
+//                 <1=> AF1 (TIM1/TIM2) 
+//                 <2=> AF2 (TIM3..5) 
+//                 <3=> AF3 (TIM8..11) 
+//                 <4=> AF4 (I2C1..3) 
+//                 <5=> AF5 (SPI1/SPI2) 
+//                 <6=> AF6 (SPI3) 
+//                 <7=> AF7 (USART1..3) 
+//                 <8=> AF8 (USART4..6) 
+//                 <9=> AF9 (CAN1/CAN2, TIM12..14) 
+//                 <10=> AF10(OTG_FS, OTG_HS) 
+//                 <11=> AF11(ETH) 
+//                 <12=> AF12(FSMC, SDIO, OTG_HS) 
+//                 <13=> AF13(DCMI) 
+//                 <14=> AF14 
+//                 <15=> AF15(EVENTOUT) 
 //           ^^^^----------------------
 //       <o2.25..29> **Pin 11 ========>
 //          <i> bits [0:1] as MODE; 
@@ -1275,15 +1318,15 @@ __inline static void stm32_ExtiSetup (void) {
 //           ^^^^----------------------
 //           ^^^^----------------------
 //    </e>
-#define __GPIO_j_PORT_num         5								//0
-#define jtmp1               0x06318C60						//1
+#define __GPIO_j_PORT_num         4								//0
+#define jtmp1               0x06418C60						//1
 #define jtmp2               0x10318C63						//2
 #define jtmp3               0x00000C63						//3
 #define __GPIO_j_SPEED            0x00000000			//4
 #define __GPIO_j_AFRL             0x00000000			//5
 #define __GPIO_j_AFRH             0x00000000			//6
 #define __GPIO_j_USED             0x00000001			//7
-#define __GPIO_j_pinChg1           0x00000800			//8
+#define __GPIO_j_pinChg1           0x00000010			//8
 
 #define __GPIO_j_PPOD  ( ((jtmp1&bit(4))>>4) | ((jtmp1&bit(9))>>8)  \
          | ((jtmp1&bit(14))>>12) | ((jtmp1&bit(19))>>16)  \
