@@ -1,0 +1,16 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\gpio_ini.o"
+".\objects\hardwaresystem_ini.o"
+".\objects\user_defined.o"
+".\objects\stm32f4xx_fsmc.o"
+".\objects\stm324xg_lcd_ili9328.o"
+".\objects\touch_module.o"
+".\objects\whack_a_mole.o"
+".\objects\driver_spi.o"
+".\objects\startup_stm32f407xx.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\final project.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\final project.map" -o ".\Objects\final project.axf"
